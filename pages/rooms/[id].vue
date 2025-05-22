@@ -117,7 +117,11 @@ interface RoomDetail {
 }
 
 const roomId = route.params.id as string
-const { data: room, pending, error } = useApi<RoomDetail>(`/rooms/${roomId}`)
+const {
+  data: room,
+  pending,
+  error,
+} = await useApi<RoomDetail>(`/rooms/${roomId}`)
 
 const form = reactive({ name: "", capacity: 1 })
 const updateLoading = ref(false)

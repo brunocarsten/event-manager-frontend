@@ -13,10 +13,10 @@ interface FetchResult<T> {
  * @param endpoint - Rota da API (ex: '/people')
  * @param options  - Opções compatíveis com UseFetchOptions<{ data: T }, any>
  */
-export function useApi<T>(
+export async function useApi<T>(
   endpoint: string,
   options?: UseFetchOptions<{ data: T }, any>
-): FetchResult<T> {
+): Promise<FetchResult<T>> {
   const config = useRuntimeConfig()
   const url = `${config.public.apiBase}${endpoint}`
 

@@ -54,8 +54,14 @@
 </template>
 
 <script setup lang="ts">
-const { data, pending, error } =
-  useApi<{ id: number; name: string; capacity: number }[]>("/coffee-spaces")
+type CoffeeSpaceList = {
+  id: number
+  name: string
+  capacity: number
+}
+const { data, pending, error } = await useApi<CoffeeSpaceList[]>(
+  "/coffee-spaces"
+)
 
 const list = computed(() => data.value ?? [])
 const count = computed(() => list.value.length)

@@ -46,9 +46,13 @@
 </template>
 
 <script setup lang="ts">
+type RoomList = {
+  id: number
+  name: string
+  capacity: number
+}
 const router = useRouter()
-const { data, pending, error } =
-  useApi<{ id: number; name: string; capacity: number }[]>("/rooms")
+const { data, pending, error } = await useApi<RoomList[]>("/rooms")
 
 const list = computed(() => data.value ?? [])
 const count = computed(() => list.value.length)

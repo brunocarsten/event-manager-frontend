@@ -119,7 +119,7 @@ const {
   data: space,
   pending,
   error,
-} = useApi<SpaceDetail>(`/coffee-spaces/${spaceId}`)
+} = await useApi<SpaceDetail>(`/coffee-spaces/${spaceId}`)
 
 const form = reactive({ name: "", capacity: 1 })
 const updateLoading = ref(false)

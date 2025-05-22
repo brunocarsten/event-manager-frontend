@@ -98,10 +98,11 @@ interface Resource {
 }
 
 const config = useRuntimeConfig()
-const { data: rawAllocations, pending } =
-  useApi<RawAllocation[]>("/allocations")
-const { data: rooms } = useApi<Resource[]>("/rooms")
-const { data: coffeeSpaces } = useApi<Resource[]>("/coffee-spaces")
+const { data: rawAllocations, pending } = await useApi<RawAllocation[]>(
+  "/allocations"
+)
+const { data: rooms } = await useApi<Resource[]>("/rooms")
+const { data: coffeeSpaces } = await useApi<Resource[]>("/coffee-spaces")
 
 const table = useTemplateRef("table")
 

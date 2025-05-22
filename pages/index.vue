@@ -149,12 +149,18 @@ interface GroupedAllocation {
 }
 
 const router = useRouter()
-const { data: people, pending: peoplePending } = useApi<PersonList[]>("/people")
-const { data: rooms, pending: roomsPending } = useApi<RoomList[]>("/rooms")
-const { data: coffeeSpaces, pending: coffeePending } =
-  useApi<CoffeeSpaceList[]>("/coffee-spaces")
-const { data: rawAllocations, pending: allocPending } =
-  useApi<RawAllocation[]>("/allocations")
+const { data: people, pending: peoplePending } = await useApi<PersonList[]>(
+  "/people"
+)
+const { data: rooms, pending: roomsPending } = await useApi<RoomList[]>(
+  "/rooms"
+)
+const { data: coffeeSpaces, pending: coffeePending } = await useApi<
+  CoffeeSpaceList[]
+>("/coffee-spaces")
+const { data: rawAllocations, pending: allocPending } = await useApi<
+  RawAllocation[]
+>("/allocations")
 
 const searchQuery = ref("")
 interface SearchItem {

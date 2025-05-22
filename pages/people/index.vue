@@ -45,6 +45,6 @@ interface Person {
   id: number
   full_name: string
 }
-const { data: people, pending, error } = useApi<Person[]>("/people")
+const { data: people, pending, error } = await useApi<Person[]>("/people")
 const peopleCount = computed(() => people.value?.length ?? 0)
 </script>

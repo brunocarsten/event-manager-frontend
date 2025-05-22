@@ -66,7 +66,7 @@ const {
   data: person,
   pending,
   error,
-} = useApi<PersonDetail>(`/people/${personId}`)
+} = await useApi<PersonDetail>(`/people/${personId}`)
 
 function goBack() {
   router.push("/people")
