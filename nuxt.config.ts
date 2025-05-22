@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'http://0.0.0.0/api',
+      apiBase: 'http://98.85.81.46/api/rooms',
     },
   },
 })
