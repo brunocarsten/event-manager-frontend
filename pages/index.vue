@@ -219,7 +219,9 @@ const groupedAllocations = computed<GroupedAllocation[]>(
 )
 
 const pendingAllocations = computed(
-  () => (people.value ?? []).filter((a) => !a.stage1 || !a.stage2).length
+  () =>
+    (people.value ?? []).filter((a) => a.stage1 === null || a.stage2 === null)
+      .length
 )
 
 const recentAllocations = computed<GroupedAllocation[]>(() => {
