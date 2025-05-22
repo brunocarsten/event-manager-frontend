@@ -1,75 +1,60 @@
-# Nuxt Minimal Starter
+# Frontend
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este repositório contém apenas o frontend da aplicação, desenvolvido em Nuxt 3 e Vue 3, consumindo uma API RESTful para gestão de participantes, salas e espaços de café.
 
-## Setup
+## 📦 Tecnologias
 
-Make sure to install dependencies:
+* **Framework**: Nuxt 3 (Vue 3, TypeScript)
+* **Estilização**: Tailwind CSS, Nuxt UI
+* **Fetch**: composable `useApi`
+* **Testes**: Vitest (unitários), Playwright/Cypress (E2E)
+* **Containerização**: Docker, Dockerfile incluso
+
+## 🚀 Pré-requisitos
+
+* Node.js v16+ e npm
+* (Opcional) Docker & Docker Compose
+
+## 🛠️ Instalação
+
+Execute:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## 🏃‍♂️ Desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Inicie o servidor de desenvolvimento:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+A aplicação ficará disponível em `http://localhost:3000`.
 
-Build the application for production:
+## 📦 Build e Preview
+
+Para gerar o build e pré-visualizar:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run preview
 ```
 
-Locally preview production build:
+## 🐳 Docker (Frontend)
+
+### Usando Dockerfile
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+docker build -t frontend-app .
+docker run -d -p 3000:3000 frontend-app
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 🧪 Testes
+
+### Testes Unitários (Vitest)
+
+```bash
+npm run test:unit
+```
