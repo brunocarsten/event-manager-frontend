@@ -120,6 +120,8 @@
 interface PersonList {
   id: number
   full_name: string
+  stage1: string | null
+  stage2: string | null
 }
 interface RoomList {
   id: number
@@ -217,7 +219,7 @@ const groupedAllocations = computed<GroupedAllocation[]>(
 )
 
 const pendingAllocations = computed(
-  () => groupedAllocations.value.filter((a) => !a.stage1 || !a.stage2).length
+  () => (people.value ?? []).filter((a) => !a.stage1 || !a.stage2).length
 )
 
 const recentAllocations = computed<GroupedAllocation[]>(() => {
