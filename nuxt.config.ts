@@ -5,6 +5,12 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/scripts', '@nuxt/ui', '@nuxt/eslint', '@nuxt/scripts', '@nuxt/image', '@nuxt/fonts'],
 
+  icon: {
+    // @ts-expect-error import iconify
+    provider: 'lucide',
+    serverBundle: false,
+  },
+
   css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
